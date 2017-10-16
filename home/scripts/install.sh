@@ -7,5 +7,6 @@ git submodule update --init --recursive
 cd "${HOME}/.vim/bundle/YouCompleteMe"
 ./install.py --js-completer
 
+ln -s "${HOME}/github/conf/home/.bash_aliases" "${HOME}/.bash_aliases"
 ln -s "${HOME}/github/conf/home/.vimrc" "${HOME}/.vimrc"
 ln -s "${HOME}/github/conf/home/.vim" "${HOME}/.vim"
