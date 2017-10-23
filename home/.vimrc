@@ -39,5 +39,7 @@ let g:Tlist_WinWidth=40
 let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ansible_options = {'ignore_blank_lines': 0}
 
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " "+y     Yank to clipboard
 " "+p     Paste from clipboard
