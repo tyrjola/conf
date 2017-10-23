@@ -29,6 +29,7 @@ nnoremap <C-?> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <f2> :NERDTreeToggle<CR>
 nnoremap <f3> :TlistToggle<CR>
 nnoremap <f4> :%s/\s\+$//g<CR>
+nnoremap <f5> :Neoformat<CR>
 nnoremap <f9> :make<CR>
 
 xnoremap p "_dP
