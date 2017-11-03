@@ -32,6 +32,8 @@ nnoremap <f4> :%s/\s\+$//g<CR>
 nnoremap <f5> :Neoformat<CR>
 nnoremap <f9> :make<CR>
 
+inoremap jj <ESC>
+
 xnoremap p "_dP
 
 let g:NERDTreeWinSize=40
