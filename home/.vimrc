@@ -4,7 +4,7 @@ set tabstop=4
 set expandtab
 set splitright
 set nocompatible
-set number
+set relativenumber
 set ruler
 set clipboard=unnamedplus
 
