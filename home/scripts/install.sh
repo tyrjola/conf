@@ -10,7 +10,9 @@ sudo apt-get install -yy \
     cmake \
     python-dev \
     python3-dev \
-    astyle
+    astyle \
+    npm \
+    exuberant-ctags
 
 sudo pip install --upgrade pycodestyle autopep8 docker-compose
 
