@@ -16,3 +16,6 @@
 [submodule "home/.vim/bundle/neoformat"]
 	path = home/.vim/bundle/neoformat
 	url = git@github.com:sbdchd/neoformat.git
+[submodule "home/.vim/bundle/vim-javascript"]
+	path = home/.vim/bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
