@@ -1,4 +1,4 @@
-alias vim='vim -p'
+alias vim='nvim -p'
 
 alias tag='ctags -R .'
 
@@ -22,3 +22,5 @@ alias docker_rm_images='docker rmi -f $(docker images -q)'
 
 alias venv2='rm -rf ~/.venv2 && virtualenv -p /usr/bin/python2 ~/.venv2 && source ~/.venv2/bin/activate && pip install -r requirements.txt'
 alias venv3='rm -rf ~/.venv3 && virtualenv -p /usr/bin/python3 ~/.venv3 && source ~/.venv3/bin/activate && pip install -r requirements.txt'
+
+alias cpsecrets='git cherry-pick 5c3b4449da'
