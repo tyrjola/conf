@@ -14,6 +14,8 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
+set background=dark
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$\|\t/
@@ -63,8 +65,6 @@ let g:NERDTreeWinSize=40
 let g:Tlist_WinWidth=40
 let g:ansible_options = {'ignore_blank_lines': 0}
 let g:deoplete#enable_at_startup = 1
-let g:loaded_youcompleteme = 1
-let g:ycm_autoclose_preview_window_after_insertion=1
 
 let b:ale_linters = {'javascript': ['eslint']}
 
