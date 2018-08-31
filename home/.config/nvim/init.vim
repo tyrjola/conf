@@ -13,6 +13,8 @@ Plug 'othree/jspc.vim'
 Plug 'steelsojka/deoplete-flow', { 'do': 'npm install -g flow-bin' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 

@@ -51,7 +51,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set completeopt=longest,menuone,preview
+set completeopt=longest,menuone
 
 let g:NERDTreeWinSize=40
 let g:ansible_options = {'ignore_blank_lines': 0}
@@ -64,13 +64,23 @@ imap <C-b>  <Plug>(neosnippet_expand_or_jump)
 smap <C-b>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-b>  <Plug>(neosnippet_expand_target)
 
+let g:ale_linters = {
+\ 'python': ['flake8']
+\}
+
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ 'javascript': ['prettier', 'eslint'],
+\ 'python': ['autopep8']
 \}
 let g:ale_fix_on_save = 1
 
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#goto_command = "<f3>"
+let g:jedi#usages_command = "<f5>"
+
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype json setlocal ts=2 sts=2 sw=2
 
 " "+y     Yank to clipboard
 " "+p     Paste from clipboard
