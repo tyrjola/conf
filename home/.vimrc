@@ -27,9 +27,9 @@ nnoremap <C-h> <C-w>W
 nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <C-?> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <f2> :NERDTreeToggle<CR>
-nnoremap <f3> :TlistToggle<CR>
+nnoremap <f3> :ALEGoToDefinitionInTab<CR>
 nnoremap <f4> :%s/\s\+$//g<CR>
-nnoremap <f5> :Neoformat<CR>
+nnoremap <f5> :ALEFindReferences<CR>
 nnoremap <f9> :make<CR>
 
 inoremap <Up> <NOP>
@@ -51,19 +51,24 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+set completeopt=longest,menuone,preview
+
+let g:NERDTreeWinSize=40
+let g:ansible_options = {'ignore_blank_lines': 0}
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+let g:deoplete#enable_at_startup = 1
+
+let g:neosnippet#enable_completed_snippet = 1
 imap <C-b>  <Plug>(neosnippet_expand_or_jump)
 smap <C-b>  <Plug>(neosnippet_expand_or_jump)
 xmap <C-b>  <Plug>(neosnippet_expand_target)
 
-let g:NERDTreeWinSize=40
-let g:ansible_options = {'ignore_blank_lines': 0}
-
-set completeopt=longest,menuone,preview
-
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-let g:deoplete#enable_at_startup = 1
-let g:neosnippet#enable_completed_snippet = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\}
+let g:ale_fix_on_save = 1
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
