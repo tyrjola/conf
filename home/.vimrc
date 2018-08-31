@@ -8,8 +8,6 @@ set relativenumber
 set ruler
 set clipboard=unnamedplus
 
-execute pathogen#infect()
-
 syntax on
 filetype plugin on
 filetype plugin indent on
@@ -46,8 +44,6 @@ nnoremap <Right> <NOP>
 
 inoremap jj <ESC>
 xnoremap p "_dP
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
 
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim
@@ -55,18 +51,21 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-
-autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+imap <C-b>  <Plug>(neosnippet_expand_or_jump)
+smap <C-b>  <Plug>(neosnippet_expand_or_jump)
+xmap <C-b>  <Plug>(neosnippet_expand_target)
 
 let g:NERDTreeWinSize=40
-let g:Tlist_WinWidth=40
 let g:ansible_options = {'ignore_blank_lines': 0}
-let g:deoplete#enable_at_startup = 1
 
-let b:ale_linters = {'javascript': ['eslint']}
+set completeopt=longest,menuone,preview
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+let g:deoplete#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
+
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " "+y     Yank to clipboard
 " "+p     Paste from clipboard

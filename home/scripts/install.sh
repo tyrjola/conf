@@ -12,6 +12,7 @@ curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -yy \
     vim \
     python-pip \
+    python-pip3 \
     gitk \
     build-essential \
     cmake \
@@ -21,7 +22,10 @@ sudo apt-get install -yy \
     astyle \
     exuberant-ctags
 
-sudo pip install --upgrade pycodestyle autopep8 docker-compose
+pip install --user --upgrade pycodestyle autopep8 docker-compose neovim
+pip3 install --user --upgrade neovim
 
-cd "${HOME}/.vim/bundle"
-git submodule update --init --recursive
+#mkdir ~/.npm-global
+#npm config set prefix '~/.npm-global'
+#export PATH=~/.npm-global/bin:$PATH
+#npm install -g eslint flow-bin
