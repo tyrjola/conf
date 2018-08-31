@@ -24,8 +24,8 @@ sudo apt-get install -yy \
     astyle \
     exuberant-ctags
 
-pip install --user --upgrade pycodestyle autopep8 docker-compose neovim
-pip3 install --user --upgrade neovim
+pip install --user --upgrade pycodestyle autopep8 flake8 neovim docker-compose aws awscli boto boto3 httpie jedi
+pip3 install --user --upgrade pycodestyle autopep8 flake8 neovim docker-compose aws awscli boto boto3 httpie jedi
 
 mkdir "${HOME}/.npm-global"
 npm config set prefix '~/.npm-global'
