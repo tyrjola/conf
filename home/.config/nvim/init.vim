@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Shougo/echodoc.vim'
+Plug 'vim-scripts/auto-pairs-gentle'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -20,6 +22,7 @@ call plug#end()
 
 let g:NERDTreeWinSize=40
 let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:echodoc#enable_at_startup = 1
 
 let g:deoplete#enable_at_startup = 1
 
@@ -40,10 +43,15 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 
+let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_command = "<f3>"
 let g:jedi#usages_command = "<f5>"
 
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=jedi#completions
+
+set noshowmode
+set shortmess+=c
+
 source ~/.vimrc

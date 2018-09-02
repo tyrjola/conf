@@ -20,7 +20,5 @@ alias clean_branches='git checkout master && git branch | grep -v master | xargs
 alias docker_rm_all='docker rm -f $(docker ps -q)'
 alias docker_rm_images='docker rmi -f $(docker images -q)'
 
-alias venv2='rm -rf ~/.venv2 && virtualenv -p /usr/bin/python2 ~/.venv2 && source ~/.venv2/bin/activate && pip install -r requirements.txt'
-alias venv3='rm -rf ~/.venv3 && virtualenv -p /usr/bin/python3 ~/.venv3 && source ~/.venv3/bin/activate && pip install -r requirements.txt'
-
-alias cpsecrets='git cherry-pick 5c3b4449da'
+alias venv2='rm -rf ~/.venv2 && virtualenv -p /usr/bin/python2 ~/.venv2 && source ~/.venv2/bin/activate && pip install neovim'
+alias venv3='rm -rf ~/.venv3 && virtualenv -p /usr/bin/python3 ~/.venv3 && source ~/.venv3/bin/activate && pip install neovim'
