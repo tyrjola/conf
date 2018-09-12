@@ -17,6 +17,11 @@ Plug 'honza/vim-snippets'
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'Shougo/denite.nvim'
+Plug 'leafgarland/typescript-vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['typescript'] }
 
 call plug#end()
 
@@ -33,12 +38,14 @@ let g:UltiSnipsJumpBackwardTrigger="<C-m>"
 call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
 
 let g:ale_linters = {
+\ 'typescript': ['tslint'],
 \ 'python': ['flake8']
 \}
 
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'javascript': ['prettier', 'eslint'],
+\ 'typescript': ['prettier', 'tslint'],
 \ 'python': ['autopep8']
 \}
 let g:ale_fix_on_save = 1
@@ -48,10 +55,29 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_command = "<f3>"
 let g:jedi#usages_command = "<f5>"
 
+let g:typescript_indent_disable = 1
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.ts,*.tsx Prettier
+
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#semi = 'false'
+let g:prettier#config#trailing_comma = 'none'
+
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=jedi#completions
 
 set noshowmode
 set shortmess+=c
+
+nnoremap <f2> :NERDTreeToggle<CR>
+nnoremap <f3> :ALEGoToDefinitionInTab<CR>
+nnoremap <f4> :%s/\s\+$//g<CR>
+nnoremap <f5> :ALEFindReferences<CR>
+nnoremap <f6> :call RelativeLineNoToggle()<CR>
+nnoremap <f9> :make<CR>
+
+autocmd FileType typescript nnoremap <f3> :TSDef<CR>
+autocmd FileType typescript nnoremap <f5> :TSRefs<CR>
 
 source ~/.vimrc

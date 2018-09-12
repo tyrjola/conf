@@ -22,3 +22,5 @@ alias docker_rm_images='docker rmi -f $(docker images -q)'
 
 alias venv2='rm -rf ~/.venv2 && virtualenv -p /usr/bin/python2 ~/.venv2 && source ~/.venv2/bin/activate && pip install neovim'
 alias venv3='rm -rf ~/.venv3 && virtualenv -p /usr/bin/python3 ~/.venv3 && source ~/.venv3/bin/activate && pip install neovim'
+
+alias awscust='aws --profile cust'

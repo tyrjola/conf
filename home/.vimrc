@@ -25,11 +25,14 @@ nnoremap <C-l> <C-w>w
 nnoremap <C-h> <C-w>W
 nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <C-?> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <f2> :NERDTreeToggle<CR>
-nnoremap <f3> :ALEGoToDefinitionInTab<CR>
-nnoremap <f4> :%s/\s\+$//g<CR>
-nnoremap <f5> :ALEFindReferences<CR>
-nnoremap <f9> :make<CR>
+
+function! RelativeLineNoToggle()
+    if &relativenumber
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
 
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
@@ -45,7 +48,9 @@ inoremap jj <ESC>
 xnoremap p "_dP
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 
 " "+y     Yank to clipboard
 " "+p     Paste from clipboard
