@@ -1,0 +1,11 @@
+set relativenumber
+
+nnoremap <f3> :action GotoImplementation<CR>
+nnoremap <f5> :action FindUsages<CR>
+
+nnoremap <C-k> :action NextTab<CR>
+nnoremap <C-j> :action PreviousTab<CR>
+
+nnoremap <C-h> :action ActivateProjectToolWindow<CR>
+
+xnoremap p "_dP

@@ -1,0 +1,8 @@
+{
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.fontWeight": "500",
+    "prettier.semi": false,
+    "prettier.tslintIntegration": true,
+    "editor.lineNumbers": "relative"
+}

@@ -15,9 +15,9 @@ filetype plugin indent on
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
-au BufEnter * match ExtraWhitespace /\s\+$\|\t/
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$\|\t/
-au InsertLeave * match ExtraWhiteSpace /\s\+$\|\t/
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 nnoremap <C-k> :tabnext<CR>
 nnoremap <C-j> :tabprevious<CR>
@@ -44,11 +44,11 @@ nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 
-inoremap jj <ESC>
 xnoremap p "_dP
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype yaml setlocal ts=2 sts=2 sw=2
 

@@ -1,6 +1,7 @@
-alias vim='nvim -p'
+alias shu='shutdown now'
 
-alias tag='ctags -R .'
+alias vim='nvim -p'
+alias idea='~/idea/bin/idea.sh'
 
 alias fetch='git fetch --all --prune --tags'
 alias amend='git commit --amend'
@@ -8,8 +9,8 @@ alias commit='git commit'
 alias co='git checkout'
 alias cob='git checkout -b'
 alias com='git checkout master'
-alias reset_master='git fetch && git reset --hard origin/master'
-alias rebase_master='git fetch && git rebase origin/master'
+alias reset_master='fetch && git reset --hard origin/master'
+alias rebase_master='fetch && git rebase origin/master'
 alias push_master='git push origin HEAD:master'
 alias push='git push origin'
 alias pushf='git push -fu origin'
@@ -23,4 +24,8 @@ alias docker_rm_images='docker rmi -f $(docker images -q)'
 alias venv2='rm -rf ~/.venv2 && virtualenv -p /usr/bin/python2 ~/.venv2 && source ~/.venv2/bin/activate && pip install neovim'
 alias venv3='rm -rf ~/.venv3 && virtualenv -p /usr/bin/python3 ~/.venv3 && source ~/.venv3/bin/activate && pip install neovim'
 
-alias awscust='aws --profile cust'
+alias editvim='vim ~/.config/nvim/init.vim'
+
+if [ -f ~/.bash_aliases_secret ]; then
+    . ~/.bash_aliases_secret
+fi
