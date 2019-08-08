@@ -1,8 +1,0 @@
-style=allman
-add-brackets
-convert-tabs
-max-code-length=100
-break-blocks
-pad-oper
-unpad-paren
-pad-header

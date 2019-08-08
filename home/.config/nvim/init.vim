@@ -52,8 +52,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'javascript': ['prettier', 'eslint'],
-\ 'typescript': ['prettier', 'tslint'],
-\ 'python': ['autopep8']
+\ 'typescript': ['prettier', 'tslint']
 \}
 let g:ale_fix_on_save = 1
 
